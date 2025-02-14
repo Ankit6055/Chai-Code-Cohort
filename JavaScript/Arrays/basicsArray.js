@@ -27,7 +27,7 @@ let sentence = str.join(" ");
 console.log(sentence); // Hello World
 
 // Sort an array in ascending order
-console.log(arr.sort());
+console.log(arr.sort((a, b) => a - b)); // [ 'Banana', 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
 
 // Find the index of 7 in Array
 console.log(arr.indexOf(7)); // if its not present, then it return -1
