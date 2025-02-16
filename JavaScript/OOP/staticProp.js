@@ -13,7 +13,7 @@ class User {
 }
 
 const Ankit = new User("Ankit");
-// console.log(Ankit.createId()); // Ankit.createId is not a function
+// console.log(Ankit.createId()); // Ankit.createId is not a function(Coz it's static)
 
 class Teacher extends User {
     constructor(username, email) {
