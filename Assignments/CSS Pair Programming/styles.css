@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #1f2937;
+    display: flex;
+    /* width: 100vw; */
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 80px;
+    color: #ffffff;
+}
+
+nav div ul {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+nav div button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+nav div button:hover {
+    background-color: #ffffff;
+    color: #1f2937;
+}
+
+/* ***************************Hero Section****************************** */
+
+.hero {
+    display: flex;
+    justify-content: space-around;
+    background-color: #1f2937;
+    color: #ffffff;
+    padding: 40px 80px;
+    align-items: center;
+}
+
+.hero div {
+    margin: 20px;
+    width: 50%;
+}
+
+.hero div h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero div p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #b9b6b6;
+    margin-bottom: 1rem;
+}
+
+.hero div button {
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.hero div button:hover {
+    background-color: #ffffff;
+    color: #1f2937;
+}
+
+.hero div img {
+    width: 80%;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 0 10px white;
+    margin-left: 120px;
+}
+
+.hero div img:hover {
+    rotate: 10deg;
+    transition: all 0.5s ease-in-out; 
+}
+
+/* ***************************Clients****************************** */
+
+.logo-text {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 42px;
+    color: #1f2937;
+}
+
+.logo div img {
+    width: 200px;
+    object-fit: cover;    
+}
+
+.logo {
+    margin: 20px 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    padding: 40px 80px;
+}
+
+.logo div {
+    margin: 10px;
+}
+
+/* ***************************About****************************** */
+
+.three-card {
+    margin: 20px 10%;
+    display: flex;
+    justify-content: space-evenly;
+    border: 2px solid black;
+    padding: 40px 80px;
+    box-shadow: 0 0 10px black;
+} 
+
+.three-card img {
+    width: 150px;
+    object-fit: cover;
+    border-radius: 11px;
+}
+
+.card {
+    border: 2px solid #1f2937;
+    width: 20%;
+    border-radius: 15px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 10px black;
+}
+
+.card h2 {
+    margin: 20px 0;
+}
+
+.card p {
+    margin: 20px 0;
+}
+
+@media screen and (max-width: 976px) {
+    body {
+        background-color: red;
+    }
+    .three-card {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .three-card div {
+        width: 100%;
+    }
+}
+
+/* @media screen and (max-width: 768px) and (min-width: 481px) {
+    body {
+        background-color: green;
+    }
+} */

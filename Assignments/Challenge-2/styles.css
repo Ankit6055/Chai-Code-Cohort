@@ -1,0 +1,189 @@
+:root {
+    --primary-blue: #3b82f6;
+    --primary-blue-dark: #2563eb;
+    --gray-800: #1f2937;
+    --neutral-400: #9ca3af;
+    --neutral-900: #111827;
+  
+    /* Dark mode variables */
+    --bg-dark: #111827;
+    --text-dark: #ffffff;
+    --border-dark: #374151;
+  }
+  
+  body {
+    /* height: 100vh; */
+    margin-top: 100px;
+  }
+  
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 100px; */
+    padding: none;
+  }
+  
+  .hero-grid {
+    display: flex;
+  }
+  
+  .content-col h1 {
+    font-size: 70px;
+    color: var(--neutral-900);  
+  }
+  
+  .content-col p {
+    color: var(--neutral-900);
+    font-size: 25px;
+    margin-top: -30px;
+  }
+  
+  .cta-group {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+  }
+  
+  .sr-only {
+    height: 10px;
+  }
+  
+  .input-wrapper {
+    display: flex;
+    margin-right: 15px;
+  }
+  
+  input[type='text'] {
+    height: 35px;
+    border-radius: 10px;
+    border: 0.8px solid var(--neutral-400);
+    width: 240px;
+  }
+  
+  .demo-button {
+    width: 125px;
+    border-radius: 10px;
+    /* border-color: var(--neutral-400); */
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .demo-button:hover {
+    background-color: var(--primary-blue-dark);
+  }
+  
+  .brands-section {
+    margin-top: 40px;
+  }
+  
+  .trusted-by {
+    color: var(--neutral-900);
+    font-size: 25px;
+  }
+  
+  .brand-logos {
+    display: flex;
+    margin-top: -20px;
+  }
+  
+  .brand-logo {
+    width: 106px;
+    height: 106px;
+    margin-right: 25px;
+  }
+  
+  .image-col {
+  }
+  
+  .hero-image {
+    border-radius: 20px;
+    margin-top: 45px;
+    height: 450px;
+  }
+
+  
+  @media (min-width: 640px) {
+    .hero {
+    }
+  
+    .content-col h1 {
+    }
+  
+    .cta-group {
+    }
+  
+    .demo-button {
+    }
+  
+    .input-wrapper {
+    }
+  
+    input[type='text'] {
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .content-col h1 {
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .hero {
+    }
+  
+    .hero-grid {
+    }
+  
+    .content-col h1 {
+    }
+  
+    .cta-group {
+    }
+  
+    .brands-section {
+    }
+  
+    .image-col {
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .hero-grid {
+      gap: 3rem;
+    }
+  }
+  
+  .dark-mode-toggle {
+    width: 125px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--primary-blue-dark);
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 1177px;
+  }
+  
+  .dark-mode-toggle:hover {
+    background-color: var(--primary-blue);
+  }
+  
+  body.dark {
+  }
+  
+  .dark-mode-toggle {
+  }
+  
+  .dark-mode-toggle:hover {
+  }
+  
+  input[type='text'].dark {
+  }
+  
+  input[type='text']::placeholder {
+  }
+  
