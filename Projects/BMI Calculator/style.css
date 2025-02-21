@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #EAEAEA;
+}
+
+.heading {
+    font-size: 35px;
+    font-family: ui-sans-serif;
+}
+
+.boxes-bmi {
+    display: flex;
+    margin: 0 310px; 
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    max-width: 1200px; 
+}
+
+.calc-box {
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px solid #dad9de;
+    width: 100%; 
+    max-width: 400px; 
+    height: auto; 
+    min-height: 670px; 
+    gap: 15px;
+    background-color: #F3F1FA;
+    border-radius: 12px;
+    padding: 15px; 
+    
+}
+
+.calc-box2 {
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid #dad9de;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    min-height: 670px;
+    gap: 15px;
+    background-color: #F3F1FA;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.height-selector {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+
+.height-selector input[type="range"] {
+    width: 250px;
+    /* position: fixed; */
+}
+
+.val {
+    height: 75px;
+}
+
+.first-box {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.age-box {
+    background-color: #ffffff;
+    width: 45%; 
+    min-width: 150px; 
+    height: 175px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    margin: 5px; 
+}
+
+.inc-dec-btn {
+    display: flex;
+    gap: 40px;
+}
+
+.btn-inc-design, .btn-dec-design {
+    background-color: #081854;
+    width: 33px;
+    height: 31px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 21px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer; /* Added for better UX */
+}
+
+.age-value, .heightValue, .bmi-result-value {
+    color: #6c63ff;
+    font-size: 4rem; /* Reduced from 58px */
+    font-weight: bold;
+}
+
+.weight-box {
+    background-color: #ffffff;
+    width: 45%;
+    min-width: 150px;
+    height: 175px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    margin: 5px;
+}
+
+.second-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%; 
+}
+
+.height-box {
+    background-color: #ffffff;
+    /* width: 94%; */
+    max-width: 320px;
+    height: 183px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    margin-left: 22px;
+}
+
+.gif img {
+    width: 230px;
+    height: 150px;
+    border-radius: 12px;
+}
+
+.calc-btn, .clear-bmi-btn {
+    background-color: #6c63ff;
+    color: #ffffff;
+    width: 332px; 
+    max-width: 332px; 
+    height: 75px;
+    border-radius: 63px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#para-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bmi-result-box {
+    width: 100%; 
+    max-width: 333px; 
+    height: 416px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px; 
+}
+
+/* Mobile Responsive: Media Queries */
+@media (max-width: 768px) {
+    /* Adjust layout for smaller screens */
+    .boxes-bmi {
+        padding: 10px;
+        margin: 0;
+    }
+    
+    /* Adjust button sizes */
+    .calc-btn, .clear-bmi-btn {
+        height: 60px;
+        font-size: 0.9rem;
+    }
+    
+    /* Adjust value font sizes */
+    .age-value, .heightValue, .bmi-result-value {
+        font-size: 2rem;
+    }
+    
+    /* Adjust increment/decrement buttons */
+    .btn-inc-design, .btn-dec-design {
+        width: 28px;
+        height: 28px;
+        font-size: 18px;
+    }
+    
+    /* Adjust height box padding */
+    .height-box {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .age-box, .weight-box {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .age-value, .heightValue, .bmi-result-value {
+        font-size: 1.8rem;
+    }
+    
+    .inc-dec-btn {
+        gap: 30px;
+    }
+    
+    /* Make range input full width */
+    input[type="range"] {
+        width: 90%;
+    }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="boxes-bmi">
+        <div class="calc-box">
+            <div class="header">
+               <h2 class="heading">BMI Calculator</h2>
+           </div>
+           <div class="first-box">
+               <div class="age-box">
+                   <div class="age">
+                       <h4>Age</h4>
+                   </div>
+                   <div class="val">
+                       <span class="age-value" id="age-val" contenteditable="true">21</span>
+                   </div>
+                   <div class="inc-dec-btn">
+                       <button class="btn-dec-design" id="age-decrement">-</button>
+                       <button class="btn-inc-design" id="age-increment">+</button>
+                   </div>
+               </div>
+               <div class="weight-box">
+                   <div class="weight">
+                       <h4>Weight (KG)</h4>
+                   </div>
+                   <div class="val">
+                    <span class="age-value" id="weight-val" contenteditable="true">68</span>
+                   </div>
+                   <div class="inc-dec-btn">
+                       <button class="btn-dec-design" id="weight-decrement">-</button>
+                       <button class="btn-inc-design" id="weight-increment">+</button>
+                   </div>
+               </div>
+           </div>
+           <div class="second-box">
+               <div class="height-box">
+                   <div class="height">
+                       <h4>Height (CM)</h4>
+                   </div>
+                   <div class="val">
+                       <span class="heightValue" id="heightValue" contenteditable="true">180</span>
+                   </div>
+                   <div class="height-selector">
+                       <input type="range" id="height" min="50" max="300" value="175" oninput="heightValue.textContent = this.value">
+                   </div>
+               </div>
+           </div>
+           <div class="calculate-btn">
+               <button class="calc-btn" id="calculate">Calculate BMI</button>
+           </div>
+       </div>
+
+
+       <div class="calc-box2">
+        <h4 class="heading">Body Mass Index</h4>
+           <div class="bmi-result-box">
+               <div class="bmi-heading">
+                   <h4>BMI Results</h4>
+               </div>
+               <div class="bmi-result-value">
+                   <span class="bmi-result-value" id="bmi-value">20.99</span>
+               </div>
+               <div class="result-text">
+                   <p id="bmi-type">Normal BMI</p>
+               </div>
+               <div class="gif">
+                <img id="gif-image" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXZvdmRldjF2M2l2c2hzemFuZWIzNzJkYXR3ZWVkanJzY2Z5dmlxbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/m8d64EAqfMGm5JbrTx/giphy.gif" alt="">
+               </div>
+               <div class="bmi-info" id="para-info">                 
+                       <p>Underweight: BMI less than 18.5 <br></p>
+                       <p>Normal weight: BMI 18.5 to 24.9 <br></p>
+                       <p>Overweight: BMI 25 to 29.9 <br></p>
+                       <p>Obesity: 30 to 40</p>              
+               </div>
+           </div>
+           <div class="clear-btn">
+               <button class="clear-bmi-btn" id="clear">Clear Result</button>
+           </div>
+       </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
