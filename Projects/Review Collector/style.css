@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-output-box {
+    display: flex;
+}
+
+.input-box {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.output-box {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid black;
+}
