@@ -17,7 +17,6 @@ const images = [
   },
 ];
 
-const carousel = document.getElementById('carousel');
 const carouselTrack = document.getElementById('carouselTrack');
 const caption = document.getElementById('caption');
 const prevButton = document.getElementById('prevButton');
@@ -27,7 +26,8 @@ const autoPlayButton = document.getElementById('autoPlayButton');
 const timerDisplay = document.getElementById('timerDisplay');
 
 let startIndex = 0;
-let autoPlayInterval;
+let autoPlayInterval = null;
+let countdownInterval = null;
 let timer = 5;
 
 function addImageToCarousel(index) {
@@ -75,20 +75,25 @@ function updateIndicators() {
 
 function startAutoPlay() {
   if (!autoPlayInterval) {
+    timer = 5; // Reset timer
+    updateTimerDisplay();
+
     autoPlayInterval = setInterval(() => {
+      timer = 5; // Reset timer on every slide change
       startIndex = (startIndex + 1) % images.length;
       addImageToCarousel(startIndex);
-      timer = 5;
       updateTimerDisplay();
     }, 5000);
+
     autoPlayButton.innerText = "Stop Auto Play";
-    updateTimerDisplay();
   }
 }
 
 function stopAutoPlay() {
   clearInterval(autoPlayInterval);
   autoPlayInterval = null;
+  clearInterval(countdownInterval);
+  countdownInterval = null;
   autoPlayButton.innerText = "Start Auto Play";
   timerDisplay.innerText = "";
 }
@@ -102,17 +107,20 @@ autoPlayButton.addEventListener("click", () => {
 });
 
 function updateTimerDisplay() {
+  if (countdownInterval) clearInterval(countdownInterval);
+
   timerDisplay.style.display = "block";
   timerDisplay.innerText = `Next slide in ${timer}s`;
-  let countdown = setInterval(() => {
+
+  countdownInterval = setInterval(() => {
     if (!autoPlayInterval) {
       timerDisplay.style.display = "none";
-      clearInterval(countdown);
+      clearInterval(countdownInterval);
       return;
     }
     timer--;
-    timerDisplay.innerText = `Next slide in ${timer}s`;
     if (timer <= 0) timer = 5;
+    timerDisplay.innerText = `Next slide in ${timer}s`;
   }, 1000);
 }
 

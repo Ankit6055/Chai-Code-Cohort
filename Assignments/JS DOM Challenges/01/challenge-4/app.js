@@ -80,3 +80,4 @@ function checkAndShowEmptyMessage() {
     taskList.appendChild(noTaskMessage);
   }
 }
+
