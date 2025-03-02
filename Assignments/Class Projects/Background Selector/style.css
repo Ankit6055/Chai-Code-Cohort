@@ -1,0 +1,120 @@
+:root {
+    --neon-blue: #00f3ff;
+    --neon-purple: #bc13fe;
+    --dark-bg: #0a0a0f;
+    --cyber-gradient: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+}
+
+body {
+    background: var(--dark-bg);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 2rem;
+    color: white;
+}
+
+.header {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.cyber-input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--neon-blue);
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 1.1rem;
+    min-width: 300px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+}
+
+.cyber-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.cyber-input:focus {
+    outline: none;
+    box-shadow: 0 0 25px var(--neon-blue);
+    border-color: var(--neon-purple);
+}
+
+.cyber-button {
+    background: var(--cyber-gradient);
+    border: none;
+    padding: 1rem 2.5rem;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid var(--neon-blue);
+}
+
+.cyber-button:hover {
+    background: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
+    box-shadow: 0 0 35px var(--neon-purple);
+    transform: translateY(-2px);
+}
+
+#mainWindow {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: var(--neon-blue);
+    border-radius: 0 4px 4px 0;
+}
+
+.card:hover {
+    transform: translateX(10px);
+}
+
+@keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+        transparent 50%,
+        rgba(0, 243, 255, 0.05) 51%,
+        transparent 51%);
+    pointer-events: none;
+    animation: scanline 6s linear infinite;
+    z-index: 999;
+}
