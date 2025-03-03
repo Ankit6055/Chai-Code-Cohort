@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- <div class="header">
+        <h1>Project Workflow</h1>
+        <div class="header-actions">
+            
+        </div>
+    </div> -->
+    
+    <main class="kanban-board">
+        <div class="column todo">
+            <div class="column-header">
+                <div class="column-status-indicator"></div>
+                <div class="column-title">To Do</div>
+                <div class="column-count">3</div>
+            </div>
+            <div class="task-list">
+                <div class="task" draggable="true">
+                    <div class="task-status">Draft</div>
+                    <div class="task-title">Finalize design system</div>
+                    <div class="task-tags">
+                        <span class="task-tag">Design</span>
+                    </div>
+                </div>
+                <div class="task" draggable="true">
+                    <div class="task-status">Draft</div>
+                    <div class="task-title">User research interviews</div>
+                    <div class="task-tags">
+                        <span class="task-tag">Research</span>
+                    </div>
+                </div>
+                <div class="task" draggable="true">
+                    <div class="task-status">Draft</div>
+                    <div class="task-title">Documentation update</div>
+                    <div class="task-tags">
+                        <span class="task-tag">Content</span>
+                    </div>
+                </div>
+            </div>
+            <div class="add-task">
+                <button class="add-task-button">
+                    <span>+</span>
+                    <span>Add item</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="column doing">
+            <div class="column-header">
+                <div class="column-status-indicator"></div>
+                <div class="column-title">Doing</div>
+                <div class="column-count">3</div>
+            </div>
+            <div class="task-list">
+                <div class="task" draggable="true">
+                    <div class="task-status">Draft</div>
+                    <div class="task-title">API integration</div>
+                    <div class="task-tags">
+                        <span class="task-tag">Backend</span>
+                    </div>
+                </div>
+                <div class="task" draggable="true">
+                    <div class="task-status">Draft</div>
+                    <div class="task-title">Component library</div>
+                    <div class="task-tags">
+                        <span class="task-tag">Frontend</span>
+                    </div>
+                </div>
+                <div class="task" draggable="true">
+                    <div class="task-status">Draft</div>
+                    <div class="task-title">Performance optimization</div>
+                    <div class="task-tags">
+                        <span class="task-tag">Dev</span>
+                    </div>
+                </div>
+            </div>
+            <div class="add-task">
+                <button class="add-task-button">
+                    <span>+</span>
+                    <span>Add item</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="column done">
+            <div class="column-header">
+                <div class="column-status-indicator"></div>
+                <div class="column-title">Done</div>
+                <div class="column-count">3</div>
+            </div>
+            <div class="task-list">
+                <div class="task" draggable="true">
+                    <div class="task-status">Draft</div>
+                    <div class="task-title">Login page redesign</div>
+                    <div class="task-tags">
+                        <span class="task-tag">UI</span>
+                    </div>
+                </div>
+                <div class="task" draggable="true">
+                    <div class="task-status">Draft</div>
+                    <div class="task-title">Authentication flow</div>
+                    <div class="task-tags">
+                        <span class="task-tag">Security</span>
+                    </div>
+                </div>
+                <div class="task" draggable="true">
+                    <div class="task-status">Draft</div>
+                    <div class="task-title">Dashboard metrics</div>
+                    <div class="task-tags">
+                        <span class="task-tag">Analytics</span>
+                    </div>
+                </div>
+            </div>
+            <div class="add-task">
+                <button class="add-task-button">
+                    <span>+</span>
+                    <span>Add item</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- <div class="column testing">
+            <div class="column-header">
+                <div class="column-status-indicator"></div>
+                <div class="column-title">Testing</div>
+                <div class="column-count">0</div>
+            </div>
+            <div class="task-list">
+                
+            </div>
+            <div class="add-task">
+                <button class="add-task-button">
+                    <span>+</span>
+                    <span>Add item</span>
+                </button>
+            </div>
+        </div> -->
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
