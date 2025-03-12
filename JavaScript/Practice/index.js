@@ -67,12 +67,20 @@
 //     })(i);
 // }
 
-import { GoogleGenerativeAI } from "@google/generative-ai";
-const genAI = new GoogleGenerativeAI("AIzaSyBB2FL7otovl_phgaZB1XwU4SMSR2n14UM");
+// import { GoogleGenerativeAI } from "@google/generative-ai";
+// const genAI = new GoogleGenerativeAI("AIzaSyBB2FL7otovl_phgaZB1XwU4SMSR2n14UM");
 
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+// const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-const prompt = "Explain how AI works";
+// const prompt = "Explain how AI works";
 
-const result = await model.generateContent(prompt);
-console.log(result.response.text());
+// const result = await model.generateContent(prompt);
+// console.log(result.response.text());
+
+
+// let timerId = 3000;
+// setTimeout(function() {
+//     clearInterval(timerId);
+//     console.log('Interval stopped after 5 seconds');
+//   }, 4000);
+
