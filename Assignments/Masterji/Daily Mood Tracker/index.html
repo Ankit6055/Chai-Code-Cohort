@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mood Tracker</h1>
+            <p class="subtitle">Track your emotional journey day by day</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card mood-input">
+            <h2>How are you feeling today?</h2>
+            
+            <div class="date-picker">
+                <input type="date" id="mood-date" class="date-input">
+            </div>
+            
+            <div class="mood-selector">
+                <div>
+                    <button class="mood-btn" data-mood="happy">😊</button>
+                    <span class="mood-label">Happy</span>
+                </div>
+                <div>
+                    <button class="mood-btn" data-mood="excited">🤩</button>
+                    <span class="mood-label">Excited</span>
+                </div>
+                <div>
+                    <button class="mood-btn" data-mood="peaceful">😌</button>
+                    <span class="mood-label">Peaceful</span>
+                </div>
+                <div>
+                    <button class="mood-btn" data-mood="neutral">😐</button>
+                    <span class="mood-label">Neutral</span>
+                </div>
+                <div>
+                    <button class="mood-btn" data-mood="tired">😴</button>
+                    <span class="mood-label">Tired</span>
+                </div>
+                <div>
+                    <button class="mood-btn" data-mood="sad">😢</button>
+                    <span class="mood-label">Sad</span>
+                </div>
+                <div>
+                    <button class="mood-btn" data-mood="angry">😡</button>
+                    <span class="mood-label">Angry</span>
+                </div>
+            </div>
+            
+            <div>
+                <label for="notes">Any notes about your day? (optional)</label>
+                <textarea id="notes" class="notes-area" placeholder="What made you feel this way today?"></textarea>
+            </div>
+            
+            <div class="btn-group">
+                <button id="save-mood" class="btn btn-primary">Save Mood</button>
+                <button id="clear-form" class="btn btn-outline">Clear</button>
+            </div>
+        </div>
+
+        <div class="tab-navigation">
+            <button class="tab-btn active" data-tab="timeline">Timeline</button>
+            <button class="tab-btn" data-tab="calendar">Calendar</button>
+            <button class="tab-btn" data-tab="stats">Stats</button>
+        </div>
+
+        <div id="timeline-view" class="card tab-content">
+            <h2>Your Mood Timeline</h2>
+            <div class="btn-group" style="margin-bottom: 15px;">
+                <button class="btn btn-outline filter-btn active" data-filter="day">Today</button>
+                <button class="btn btn-outline filter-btn" data-filter="week">Week</button>
+                <button class="btn btn-outline filter-btn" data-filter="month">Month</button>
+                <button class="btn btn-outline filter-btn" data-filter="all">All Time</button>
+            </div>
+            <div class="timeline" id="mood-timeline">
+                <!-- Timeline items will be dynamically added here -->
+            </div>
+        </div>
+
+        <div id="calendar-view" class="card tab-content" style="display: none;">
+            <h2>Monthly View</h2>
+            <div class="calendar-nav" style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                <button id="prev-month" class="btn btn-outline">← Previous</button>
+                <h3 id="calendar-month">March 2025</h3>
+                <button id="next-month" class="btn btn-outline">Next →</button>
+            </div>
+            <div class="calendar-view" id="calendar-grid">
+                <div class="calendar-header">Sun</div>
+                <div class="calendar-header">Mon</div>
+                <div class="calendar-header">Tue</div>
+                <div class="calendar-header">Wed</div>
+                <div class="calendar-header">Thu</div>
+                <div class="calendar-header">Fri</div>
+                <div class="calendar-header">Sat</div>
+                <!-- Calendar days will be dynamically added here -->
+            </div>
+        </div>
+
+        <div id="stats-view" class="card tab-content" style="display: none;">
+            <h2>Mood Statistics</h2>
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-value" id="total-entries">0</div>
+                    <div class="stat-label">Total Entries</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="streak-count">0</div>
+                    <div class="stat-label">Day Streak</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="common-mood">-</div>
+                    <div class="stat-label">Most Common</div>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Mood Distribution</h3>
+                <div id="mood-distribution" style="height: 200px; margin-top: 20px;">
+                    <!-- Mood distribution chart will be added dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mood-details" id="mood-details-modal">
+        <div class="mood-details-content">
+            <button class="close-btn" id="close-details">&times;</button>
+            <h2>Mood Details</h2>
+            <div id="detail-date" class="detail-item"></div>
+            <div id="detail-mood" class="detail-item"></div>
+            <div id="detail-notes" class="detail-item"></div>
+            <div class="btn-group" style="justify-content: space-between; margin-top: 20px;">
+                <button id="edit-entry" class="btn btn-outline">Edit</button>
+                <button id="delete-entry" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">Mood saved successfully!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
