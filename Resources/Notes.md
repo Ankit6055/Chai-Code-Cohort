@@ -11,3 +11,6 @@
 # Interesting Docs
 
 - [thecopenhagenbook](https://thecopenhagenbook.com/)
+
+
+- https://vscode.dev/

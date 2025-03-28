@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf - A Library for Book Lovers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Bookshelf</div>
+        <div class="tagline">A library for book lovers</div>
+    </header>
+
+    <div class="container">
+        <div class="controls">
+            <div class="search-sort">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search by title or author...">
+                    <span class="search-icon"><i class="fas fa-search"></i></span>
+                </div>
+                <div class="sort-container">
+                    <select id="sort-select">
+                        <option value="title">Sort by Title (A-Z)</option>
+                        <option value="newest">Sort by Newest First</option>
+                        <option value="oldest">Sort by Oldest First</option>
+                    </select>
+                </div>
+            </div>
+            <div class="view-toggle">
+                <button id="grid-view" class="active" title="Grid View">
+                    <i class="fas fa-th"></i>
+                </button>
+                <button id="list-view" title="List View">
+                    <i class="fas fa-list"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="books-container">
+            <div id="books-display" class="books-grid">
+                <!-- Books will be dynamically inserted here -->
+            </div>
+        </div>
+
+        <div class="pagination">
+            <button id="prev-page" disabled>Previous</button>
+            <span class="pagination-info">Page <span id="current-page">1</span> of <span id="total-pages">1</span></span>
+            <button id="next-page">Next</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
