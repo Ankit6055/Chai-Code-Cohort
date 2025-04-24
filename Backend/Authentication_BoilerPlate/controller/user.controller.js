@@ -8,7 +8,7 @@ const registerUser = async (req, res) => {
   // send token as email to user
   // send success status to user
 
-  // res.send(req.body)
+  res.send("registered!")
 
   // const { name, email, password } = req.body;
   // if (!name || !email || !password) {
