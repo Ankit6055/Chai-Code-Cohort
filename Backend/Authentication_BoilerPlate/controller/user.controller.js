@@ -99,6 +99,7 @@ const verifyUser = async (req, res) => {
   const { token } = req.params;
   console.log(token);
 
+  
   if (!token) {
     return res.status(400).json({
       message: "Invalid token",
