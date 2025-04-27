@@ -2,6 +2,8 @@ import User from "../model/user.model.js";
 import crypto from "crypto";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 dotenv.config();
 
@@ -99,7 +101,6 @@ const verifyUser = async (req, res) => {
   const { token } = req.params;
   console.log(token);
 
-  
   if (!token) {
     return res.status(400).json({
       message: "Invalid token",
@@ -113,8 +114,57 @@ const verifyUser = async (req, res) => {
   }
   user.isVerified = true;
   user.verificationToken = undefined;
-  await user.save()
-
+  await user.save();
 };
 
-export { registerUser, verifyUser };
+const login = async (req, res) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({
+      message: "All fields are requires!",
+    });
+  }
+
+  try {
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(400).json({
+        message: "Invalid email or password",
+      });
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    console.log(isMatch);
+
+    if (!isMatch) {
+      return res.status(400).json({
+        message: "Invalid email or password",
+      });
+    }
+
+    const token = jwt.sign({ id: user._id, role: user.role }, "shhhhh", {
+      expiresIn: "24h",
+    });
+
+    const cookieOptions = {
+      httpOnly: true,
+      secure: true,
+      maxAge: 24 * 60 * 60 * 1000,
+    };
+    res.cookie("token", token, cookieOptions);
+
+    res.status(200).json({
+      success: true,
+      message: "Login Successfull",
+      token,
+      user: {
+        id: user._id,
+        name: user.name,
+        role: user.role,
+      },
+    });
+  } catch (error) {}
+};
+
+export { registerUser, verifyUser, login };
